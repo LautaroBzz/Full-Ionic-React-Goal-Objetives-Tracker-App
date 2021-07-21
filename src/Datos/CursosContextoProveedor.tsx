@@ -6,7 +6,7 @@ const CursosContectoProveedor: React.FC = props => {
   const [cursos, setCursos] = useState <Curso[]> ([
     {
       id: "c1",
-      titulo: "Curso de React",   // Curso inicial de ejemplo
+      titulo: "Curso de Python",   // Curso inicial de ejemplo
       objetivos: [],
       incluido: true
     }

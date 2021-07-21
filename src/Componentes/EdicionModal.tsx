@@ -62,7 +62,7 @@ const EdicionModal: React.FC <{
                   </IonText>
                 </IonCol>
               </IonRow>
-          )};
+          )}
           <IonRow className="ion-text-center">
             <IonCol>
               <IonButton fill="clear" onClick={props.cancelar}> Cancelar </IonButton>

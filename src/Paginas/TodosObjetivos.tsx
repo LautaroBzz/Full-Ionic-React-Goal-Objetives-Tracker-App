@@ -46,7 +46,7 @@ const TodosObjetivos: React.FC = () => {
               </IonItem>
             ))} 
           </IonList>
-        };
+        }
       </IonContent>
     </IonPage>
   )
