@@ -5,6 +5,7 @@ import {
   IonContent,
   IonHeader,
   IonItem,
+  IonLabel,
   IonList,
   IonMenuButton,
   IonPage,
@@ -46,12 +47,15 @@ const TodosObjetivos: React.FC = () => {
       </IonHeader>
 
       <IonContent>
-        {objts.length === 0 && <h2 className="ion-text-center">No hay objetivos ingresados</h2>}
+        {objts.length === 0 && <h2 className="ion-text-center">No hay datos para mostrar</h2>}
         {objts.length > 0 && 
           <IonList>
             {objts.map(obj => (
               <IonItem key={obj.id}>
-                {obj.texto}
+                <IonLabel>
+                  <h2>{obj.texto}</h2>
+                  <p>{obj.tituloCurso}</p>
+                </IonLabel>
               </IonItem>
             ))} 
           </IonList>
