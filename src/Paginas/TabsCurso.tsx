@@ -9,9 +9,7 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-// Importo iconos
 import { list, trophyOutline } from 'ionicons/icons';
-// Importo la paginas
 import Cursos from './Cursos';
 import Objetivos from './Objetivos';
 import TodosObjetivos from "./TodosObjetivos";
@@ -19,6 +17,7 @@ import TodosObjetivos from "./TodosObjetivos";
 const TabsCurso: React.FC = () => {
   return (
     <IonTabs>
+
       <IonRouterOutlet>
         <Redirect path="/cursos" to="/cursos/lista" exact/>
         <Switch>
@@ -33,6 +32,7 @@ const TabsCurso: React.FC = () => {
           </Route>
         </Switch>
       </IonRouterOutlet>
+
       <IonTabBar slot='bottom'>
         <IonTabButton tab='obj' href='/cursos/todosobjetivos'>
           <IonIcon icon={list} />
@@ -43,6 +43,7 @@ const TabsCurso: React.FC = () => {
           <IonLabel>Todos los Cursos</IonLabel>
         </IonTabButton>
       </IonTabBar>
+      
     </IonTabs>
   )
 };

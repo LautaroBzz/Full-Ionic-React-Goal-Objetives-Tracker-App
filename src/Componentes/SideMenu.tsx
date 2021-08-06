@@ -6,7 +6,7 @@ import {
   IonTitle,
   IonToolbar,
   IonContent,
-  IonMenuToggle,
+  IonMenuToggle,    // retrae el sidebar luego de seleccionar un IonItem
   IonList,
   IonItem,
   IonIcon,
@@ -17,11 +17,13 @@ import { list, options } from "ionicons/icons";
 const SideMenu: React.FC = () => {
   return (
     <IonMenu contentId='main'>
+
       <IonHeader>
         <IonToolbar>
           <IonTitle>Objetivos</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent>
         <IonList>
           <IonMenuToggle>
@@ -36,8 +38,9 @@ const SideMenu: React.FC = () => {
               <IonLabel>Filtro</IonLabel>
             </IonItem>
           </IonMenuToggle>
-        </IonList>
+        </IonList>  
       </IonContent>
+       
     </IonMenu>
   )
 };

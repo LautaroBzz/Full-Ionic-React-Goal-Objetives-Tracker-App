@@ -11,14 +11,21 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-// Importo Contexto
 import CursosContexto from '../Datos/CursosContexto';
 
 const TodosObjetivos: React.FC = () => {
   const cursosCtx = useContext(CursosContexto);
-  const objts = cursosCtx.cursos.filter(curso => {return curso.incluido}
-  ).map(curso => {return curso.objetivos}).reduce((
-    objetivoVector, objetivosNesteados) => {
+
+  const objts = cursosCtx.cursos
+    .filter(curso => {
+      return curso.incluido;
+    })
+    .map(curso => {
+      return curso.objetivos.map(obj => {
+        return {...obj, tituloCurso: curso.titulo};
+      });
+    })
+    .reduce((objetivoVector, objetivosNesteados) => {
       let objetivoVectorActualizado = objetivoVector;
       for (const objetivo of objetivosNesteados) {
         objetivoVectorActualizado = objetivoVectorActualizado.concat(objetivo);
@@ -28,6 +35,7 @@ const TodosObjetivos: React.FC = () => {
 
   return (
     <IonPage>
+
       <IonHeader>
         <IonToolbar color="primary">
           <IonButtons slot="start">
@@ -36,6 +44,7 @@ const TodosObjetivos: React.FC = () => {
           <IonTitle>TODOS LOS OBJETIVOS</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent>
         {objts.length === 0 && <h2 className="ion-text-center">No hay objetivos ingresados</h2>}
         {objts.length > 0 && 
@@ -48,6 +57,7 @@ const TodosObjetivos: React.FC = () => {
           </IonList>
         }
       </IonContent>
+      
     </IonPage>
   )
 };

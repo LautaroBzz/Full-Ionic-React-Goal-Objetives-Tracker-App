@@ -22,11 +22,8 @@ import {
   IonAlert,
 } from '@ionic/react';
 import { useParams } from "react-router-dom"; 
-// Importo iconos:
 import { addOutline, create, trash } from 'ionicons/icons';
-// Importo Componentes:
 import EdicionModal from "../Componentes/EdicionModal";
-// Importo Contexto
 import CursosContexto from '../Datos/CursosContexto';
 
 const Objetivos: React.FC = () => {
@@ -87,11 +84,11 @@ const Objetivos: React.FC = () => {
     contenido = <h2 className="ion-text-center">No hay cursos</h2>
   };
 
-  if(cursoSeleccionado && cursoSeleccionado.objetivos.length > 0) {
-    contenido = (
+  if(cursoSeleccionado && cursoSeleccionado.objetivos.length > 0) {contenido = (
       <IonList>
         {cursoSeleccionado.objetivos.map((objetivo) => (
           <IonItemSliding key={objetivo.id} ref={opcionesDeslizamientoRef}>
+
             <IonItemOptions side='start'>
               <IonItemOption
                 onClick={inicioBorrarItemObjetivo.bind(
@@ -103,9 +100,11 @@ const Objetivos: React.FC = () => {
               <IonIcon slot='icon-only' icon={trash} />
               </IonItemOption>
             </IonItemOptions>
+
             <IonItem lines='full'>
               <IonLabel>{objetivo.texto}</IonLabel>
             </IonItem>
+
             <IonItemOptions side='end'>
               <IonItemOption
                 onClick={inicioEdicionItemObjetivo.bind(
@@ -116,6 +115,7 @@ const Objetivos: React.FC = () => {
               <IonIcon slot='icon-only' icon={create} />
                 </IonItemOption>
             </IonItemOptions>
+
           </IonItemSliding>
         ))}
       </IonList>
@@ -147,6 +147,7 @@ const Objetivos: React.FC = () => {
         ]}
       />
       <IonPage>
+
         <IonHeader>
           <IonToolbar color='primary'>
             <IonButtons slot='start'>
@@ -166,6 +167,7 @@ const Objetivos: React.FC = () => {
             )}
           </IonToolbar>
         </IonHeader>
+
         <IonContent>
           {contenido}
           {isPlatform('android') && (
@@ -176,6 +178,7 @@ const Objetivos: React.FC = () => {
             </IonFab>
           )}
         </IonContent>
+        
       </IonPage>
     </>
   )

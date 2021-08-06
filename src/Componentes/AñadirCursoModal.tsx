@@ -23,23 +23,26 @@ const AñadirCursoModal: React.FC<{
 }> = (props) => {
   const [error, setError] = useState("");
   const tituloRef = useRef<HTMLIonInputElement>(null);
+
   const grabar = () => {
     const tituloIngresado = tituloRef.current!.value;
     if(!tituloIngresado || tituloIngresado.toString().trim().length===0){
       setError("Ingresar titulo valido por favor");
       return;
-    }
+    };
     setError("");
     props.grabar(tituloIngresado.toString());
   };
 
   return (
     <IonModal isOpen={props.mostrar}>
+
       <IonHeader>
         <IonToolbar color='primary'>
           <IonTitle>Añadir Curso</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent>
         <IonGrid>
           <IonRow>
@@ -73,6 +76,7 @@ const AñadirCursoModal: React.FC<{
           </IonRow>
         </IonGrid>
       </IonContent>
+      
     </IonModal>
   )
 };

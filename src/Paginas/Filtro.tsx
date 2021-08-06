@@ -23,6 +23,7 @@ const Filter:React.FC = () => {
 
   return (
     <IonPage>
+
       <IonHeader>
         <IonToolbar color="primary">
           <IonButtons slot="start">
@@ -31,6 +32,7 @@ const Filter:React.FC = () => {
           <IonTitle>FILTRO</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent>
         <IonList>
           {cursosCtx.cursos.map(curso => (
@@ -45,6 +47,7 @@ const Filter:React.FC = () => {
           ))}
         </IonList>
       </IonContent>
+      
     </IonPage>
   )
 };

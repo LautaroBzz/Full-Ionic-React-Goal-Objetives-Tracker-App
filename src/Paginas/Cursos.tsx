@@ -20,15 +20,13 @@ import {
   IonFab,
   IonFabButton,
 } from '@ionic/react';
-// Importo iconos
 import { addOutline } from 'ionicons/icons';
-// Importo Componentes
 import AñadirCursoModal from "../Componentes/AñadirCursoModal";
-// Import Contexto
 import CursosContexto from '../Datos/CursosContexto';
 
 const Cursos: React.FC = () => {
   const [añadiendo, setAñadiendo] = useState(false);
+
   const cursosCtx = useContext(CursosContexto);  
   const inicioAñadirCurso = () => {
     setAñadiendo(true);
@@ -49,7 +47,8 @@ const Cursos: React.FC = () => {
         grabar={AñadirCurso}
       />
       <IonPage>
-        <IonHeader>
+
+        <IonHeader>                       
           <IonToolbar color='primary'>
             <IonTitle>CURSOS</IonTitle>
             {!isPlatform("android") &&
@@ -61,6 +60,7 @@ const Cursos: React.FC = () => {
               }
           </IonToolbar>
         </IonHeader>
+        
         <IonContent>
           <IonGrid>
             {cursosCtx.cursos.map((curso) => (
@@ -84,20 +84,15 @@ const Cursos: React.FC = () => {
               </IonRow>
             ))}
           </IonGrid>
-          {/*<div>
-            Mismo resultado, distinto funcionamiento:
-            <IonButton routerLink='/objetivos'>Ver Objetivos 1</IonButton>
-            <IonButton onClick={cambiarPantallaHandler}>Ver Objetivos 2</IonButton>
-          </div>
-          */}
           {isPlatform("android") && 
-              <IonFab horizontal="end" vertical="bottom" slot="fixed">
-                <IonFabButton color="secondary" onClick={inicioAñadirCurso}>
-                  <IonIcon icon={addOutline}/>
-                </IonFabButton>
-              </IonFab>
-            }
+            <IonFab horizontal="end" vertical="bottom" slot="fixed">
+              <IonFabButton color="secondary" onClick={inicioAñadirCurso}>
+                <IonIcon icon={addOutline}/>
+              </IonFabButton>
+            </IonFab>
+          }
         </IonContent>
+
       </IonPage>
     </>
   )
