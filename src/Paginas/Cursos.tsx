@@ -28,6 +28,7 @@ const Cursos: React.FC = () => {
   const [añadiendo, setAñadiendo] = useState(false);
 
   const cursosCtx = useContext(CursosContexto);  
+  
   const inicioAñadirCurso = () => {
     setAñadiendo(true);
   };

@@ -30,10 +30,14 @@ const Objetivos: React.FC = () => {
   const [incioBorrar, setInicioBorrar] = useState(false);
   const [editando, setEditando] = useState(false);
   const [objetivoSeleccionado, setObjetivoSeleccionado] = useState<any>(null);
+
   const cursosCtx= useContext(CursosContexto);
+
   const opcionesDeslizamientoRef = useRef< HTMLIonItemSlidingElement >(null);
   const objetivoSeleccionadoIdRef = useRef< string | null >(null);
+
   const idCursoSeleccionado = useParams<{ idcurso: string }>().idcurso;
+  
   const cursoSeleccionado = cursosCtx.cursos.find(curso => curso.id === idCursoSeleccionado);
 
   const inicioBorrarItemObjetivo = (objetivoId: string) => {
@@ -91,10 +95,7 @@ const Objetivos: React.FC = () => {
 
             <IonItemOptions side='start'>
               <IonItemOption
-                onClick={inicioBorrarItemObjetivo.bind(
-                  null,
-                  objetivo.id
-                )}
+                onClick={inicioBorrarItemObjetivo.bind(null, objetivo.id)}
                 color='danger'
               >
               <IonIcon slot='icon-only' icon={trash} />
@@ -107,10 +108,7 @@ const Objetivos: React.FC = () => {
 
             <IonItemOptions side='end'>
               <IonItemOption
-                onClick={inicioEdicionItemObjetivo.bind(
-                  null,
-                  objetivo.id
-                )}
+                onClick={inicioEdicionItemObjetivo.bind(null,objetivo.id)}
               >
               <IonIcon slot='icon-only' icon={create} />
                 </IonItemOption>
@@ -140,10 +138,13 @@ const Objetivos: React.FC = () => {
             text: 'No',
             role: 'cancel',
             handler: () => {
-              setInicioBorrar(false)
+              setInicioBorrar(false);
             },
           },
-          { text: 'Si', handler: borradoDefinitivo },
+          { 
+            text: 'Si', 
+            handler: borradoDefinitivo 
+          },
         ]}
       />
       <IonPage>

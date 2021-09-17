@@ -23,7 +23,9 @@ const EdicionModal: React.FC <{
   objetivoEditado: {id: string; text: string} | null;
 }> = props => {
   const textoRef = useRef<HTMLIonInputElement>(null);
+
   const [error, setError] = useState("");
+  
   const guardar = () => {
     const textoIngresado = textoRef.current!.value;
     if(!textoIngresado || textoIngresado.toString().trim().length===0) {

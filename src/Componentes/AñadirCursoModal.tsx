@@ -22,11 +22,12 @@ const AñadirCursoModal: React.FC<{
   grabar: (titulo: string) => void;
 }> = (props) => {
   const [error, setError] = useState("");
+
   const tituloRef = useRef<HTMLIonInputElement>(null);
 
   const grabar = () => {
     const tituloIngresado = tituloRef.current!.value;
-    if(!tituloIngresado || tituloIngresado.toString().trim().length===0){
+    if(!tituloIngresado || tituloIngresado.toString().trim().length === 0){
       setError("Ingresar titulo valido por favor");
       return;
     };

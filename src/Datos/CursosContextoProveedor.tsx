@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import CursosContexto, { Curso, Objetivo } from "./CursosContexto";
 
-const CursosContectoProveedor: React.FC = props => {
+const CursosContextoProveedor: React.FC = props => {
   const [cursos, setCursos] = useState <Curso[]> ([
     {
       id: "c1",
@@ -40,9 +40,9 @@ const CursosContectoProveedor: React.FC = props => {
 
   const borrarObjetivo = (cursoId: string, objetivoId: string) => {
     setCursos((cursosActuales) => {
-      const cursosActualizados = [...cursosActuales]
+      const cursosActualizados = [...cursosActuales];
       const cursoActualizadoIndex = cursosActualizados.findIndex(curso => curso.id === cursoId);
-      const objetivosActualizados = 
+      const objetivosActualizados =
         cursosActualizados[
           cursoActualizadoIndex
         ].objetivos.filter((objetivo) => objetivo.id !== objetivoId);
@@ -99,4 +99,4 @@ const CursosContectoProveedor: React.FC = props => {
 
 };
 
-export default CursosContectoProveedor;
+export default CursosContextoProveedor;

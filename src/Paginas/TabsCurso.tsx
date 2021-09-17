@@ -38,7 +38,7 @@ const TabsCurso: React.FC = () => {
           <IonIcon icon={list} />
           <IonLabel>Todos los Objetivos</IonLabel>
         </IonTabButton>
-        <IonTabButton tab='curs' href='/cursos/lista'>
+        <IonTabButton tab='cur' href='/cursos/lista'>
           <IonIcon icon={trophyOutline} />
           <IonLabel>Todos los Cursos</IonLabel>
         </IonTabButton>

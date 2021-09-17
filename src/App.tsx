@@ -32,7 +32,7 @@ const App: React.FC = () => (
           <Route path="/cursos">
             <TabsCurso/>
           </Route>
-          <Redirect path="/" to="/cursos/list" exact/>
+          <Redirect path="/" to="/cursos/lista" exact/>
         </IonRouterOutlet>
       </CursosContextoProveedor>
     </IonReactRouter>
